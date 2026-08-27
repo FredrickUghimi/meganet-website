@@ -1,0 +1,26 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Environment / secrets (just in case — never commit these)
+.env
+.env.local
+
+# Archives / backups
+*.zip
+*.bak
+*.tmp
+
+# Node (only relevant if you later add build tools — safe to keep either way)
+node_modules/
+npm-debug.log

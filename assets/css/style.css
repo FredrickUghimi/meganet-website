@@ -175,6 +175,10 @@ button { font-family: inherit; cursor: pointer; }
 .brand-mark {
   height: 38px;
   width: auto;
+  flex-shrink: 0;
+}
+@media (max-width: 420px) {
+  .brand-mark { height: 30px; }
 }
 .brand-text {
   display: flex;
@@ -186,6 +190,7 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 700;
   font-size: 1.15rem;
   color: var(--blue-900);
+  white-space: nowrap;
 }
 .brand-sub {
   font-family: var(--font-mono);
@@ -193,6 +198,18 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.06em;
   color: var(--orange-600);
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* On narrow phones, "Mega-Net EHR Cloud" + button + icon can't all fit
+   on one row without wrapping badly — shrink and simplify instead */
+@media (max-width: 420px) {
+  .brand-main { font-size: 0.95rem; }
+  .brand-sub { display: none; }
+  .nav-actions .btn-sm { padding: 0.55rem 0.8rem; font-size: 0.8rem; }
+}
+@media (max-width: 360px) {
+  .brand-main { font-size: 0.85rem; }
 }
 .nav-links {
   display: none;

@@ -1,0 +1,15 @@
+Copyright (c) 2026 Mega-Net Software Ltd. All Rights Reserved.
+
+This repository and its contents (including but not limited to source code,
+markup, styling, images, and text) are the proprietary property of
+Mega-Net Software Ltd.
+
+No part of this repository may be copied, modified, distributed, or used
+in any form, in whole or in part, without prior written permission from
+Mega-Net Software Ltd.
+
+This code is made publicly viewable on GitHub for hosting purposes only
+(via GitHub Pages) and does not constitute a license to use, copy, or
+reproduce it.
+
+For permissions or inquiries, contact: info@meganetsoftware.com.ng

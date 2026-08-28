@@ -205,7 +205,6 @@ button { font-family: inherit; cursor: pointer; }
    on one row without wrapping badly — shrink and simplify instead */
 @media (max-width: 420px) {
   .brand-main { font-size: 0.95rem; }
-  .brand-sub { display: none; }
   .nav-actions .btn-sm { padding: 0.55rem 0.8rem; font-size: 0.8rem; }
 }
 @media (max-width: 360px) {

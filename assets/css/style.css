@@ -433,6 +433,15 @@ button { font-family: inherit; cursor: pointer; }
   .grid-4 { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* Benefits section: 5 cards as 3+2, with the second row centered
+   instead of stretching two cards to fill a 3-wide row */
+@media (min-width: 640px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 280px));
+    justify-content: center;
+  }
+}
+
 .card {
   background: var(--white);
   border: 1px solid var(--border);

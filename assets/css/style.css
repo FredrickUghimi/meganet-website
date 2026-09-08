@@ -91,10 +91,16 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--orange-600);
+  color: var(--blue-600);
   font-weight: 600;
   display: inline-block;
   margin-bottom: var(--space-1);
+}
+/* Exception: inside the dark-navy Financial Sentinel section, a navy-blue
+   eyebrow label would be unreadable against the navy background, so it
+   keeps the orange accent there for visibility. */
+.sentinel-section .eyebrow {
+  color: var(--orange-500);
 }
 
 .section {
@@ -353,12 +359,12 @@ body:has(.mobile-menu.is-open)::before {
   background: linear-gradient(180deg, var(--white) 0%, var(--surface) 100%);
   overflow: hidden;
 }
-/* Force consistent spacing below the hero on every page — overrides the
-   inline padding-bottom overrides left on inner pages (about, academy,
-   contact, solutions, and all solution pages) so spacing matches the
-   homepage instead of looking cramped. */
+/* Consistent, tighter spacing below the hero on inner pages (About, Academy,
+   Contact, Solutions, solution pages) — these have simple text-only heroes,
+   not the homepage's dashboard visual, so they need less bottom space to
+   avoid looking like dead empty gaps. */
 .hero[style] {
-  padding-bottom: var(--space-6) !important;
+  padding-bottom: var(--space-3) !important;
 }
 .hero-grid {
   display: grid;

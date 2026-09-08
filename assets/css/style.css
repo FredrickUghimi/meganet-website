@@ -353,6 +353,13 @@ body:has(.mobile-menu.is-open)::before {
   background: linear-gradient(180deg, var(--white) 0%, var(--surface) 100%);
   overflow: hidden;
 }
+/* Force consistent spacing below the hero on every page — overrides the
+   inline padding-bottom overrides left on inner pages (about, academy,
+   contact, solutions, and all solution pages) so spacing matches the
+   homepage instead of looking cramped. */
+.hero[style] {
+  padding-bottom: var(--space-6) !important;
+}
 .hero-grid {
   display: grid;
   gap: var(--space-4);

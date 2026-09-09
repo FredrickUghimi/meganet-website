@@ -2,6 +2,16 @@
    Mega-Net EHR Cloud — Global Stylesheet
    Design tokens: Deep Blue #0A2342 / White / Bright Green #2ECC71
    Type: Space Grotesk (display) · Inter (body) · IBM Plex Mono (data/labels)
+
+   Dark theme (current): the whole site now runs on the navy family that
+   used to be reserved for .final-cta / .sentinel-section. The neutral
+   tokens below (--surface, --surface-alt, --border, --text-body,
+   --text-muted) keep their original names/usage sitewide but now hold
+   dark-appropriate values, so every page restyles from these definitions
+   alone — no per-page HTML changes needed. --surface-elevated is the one
+   new token: cards/panels need to read as a distinct layer above whatever
+   section background they sit on (page bg, or the --surface alt-section
+   bg), so it's a separate, lighter step on the same navy ladder.
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
@@ -9,19 +19,20 @@
 :root {
   /* Brand — sampled directly from the Mega-Net logo */
   --blue-600: #0B69E7;   /* primary brand blue — links, icons, focus */
-  --blue-900: #0A2342;   /* deep navy — dark section backgrounds */
+  --blue-900: #0A2342;   /* deep navy — page-level dark surfaces */
   --blue-800: #123055;
   --blue-950: #071829;
   --orange-500: #FF8E1C; /* brand orange — primary CTA, accents, alerts */
   --orange-600: #E67812;
   --white: #FFFFFF;
 
-  /* Neutrals */
-  --surface: #F5F7FA;
-  --surface-alt: #EEF2F6;
-  --border: #E1E7EE;
-  --text-body: #263343;  /* charcoal from logo wordmark */
-  --text-muted: #6B7A8F;
+  /* Neutrals — dark theme */
+  --surface: var(--blue-900);              /* alt-section background, one step above page bg */
+  --surface-elevated: var(--blue-800);     /* cards / panels — reads as a layer above --surface and the page bg alike */
+  --surface-alt: rgba(255,255,255,0.06);   /* small nested chips inside an already-elevated surface (e.g. card icon swatch) */
+  --border: rgba(255,255,255,0.12);        /* dividers/borders — light-on-dark, since hairline light-gray borders vanish on navy */
+  --text-body: #EDF1F6;                    /* primary copy on dark — near-white, not stark white */
+  --text-muted: #93A4BC;                   /* secondary/muted copy on dark */
   --text-on-dark: #C9D6E4;
 
   /* Type */
@@ -52,7 +63,7 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--text-body);
-  background: var(--white);
+  background: var(--blue-950);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -62,7 +73,7 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; margin: 0; padding: 0; }
-h1, h2, h3, h4 { font-family: var(--font-display); color: var(--blue-900); margin: 0 0 var(--space-2); line-height: 1.15; }
+h1, h2, h3, h4 { font-family: var(--font-display); color: var(--white); margin: 0 0 var(--space-2); line-height: 1.15; }
 p { margin: 0 0 var(--space-2); }
 button { font-family: inherit; cursor: pointer; }
 
@@ -91,16 +102,13 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--blue-600);
+  /* Brand blue-600 doesn't clear WCAG AA against the navy page background
+     (was already worked around in .sentinel-section below, before the
+     whole site went dark) — orange is the readable accent everywhere now. */
+  color: var(--orange-500);
   font-weight: 600;
   display: inline-block;
   margin-bottom: 0.3rem;
-}
-/* Exception: inside the dark-navy Financial Sentinel section, a navy-blue
-   eyebrow label would be unreadable against the navy background, so it
-   keeps the orange accent there for visibility. */
-.sentinel-section .eyebrow {
-  color: var(--orange-500);
 }
 
 .section {
@@ -143,11 +151,9 @@ button { font-family: inherit; cursor: pointer; }
 .btn-outline {
   background: transparent;
   border-color: currentColor;
-  color: var(--blue-900);
+  color: var(--white);
 }
-.section--dark .btn-outline { color: var(--white); }
-.btn-outline:hover { background: rgba(10,35,66,0.06); }
-.section--dark .btn-outline:hover { background: rgba(255,255,255,0.08); }
+.btn-outline:hover { background: rgba(255,255,255,0.08); }
 .btn-sm { padding: 0.6rem 1.1rem; font-size: 0.85rem; }
 
 /* ==========================================================================
@@ -168,7 +174,7 @@ button { font-family: inherit; cursor: pointer; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255,255,255,0.96);
+  background: rgba(7,24,41,0.92); /* blue-950, translucent */
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
 }
@@ -203,7 +209,7 @@ button { font-family: inherit; cursor: pointer; }
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.15rem;
-  color: var(--blue-900);
+  color: var(--white);
   white-space: nowrap;
 }
 .brand-sub {
@@ -233,7 +239,7 @@ button { font-family: inherit; cursor: pointer; }
   order: 3;
 }
 .nav-links a { color: var(--text-body); transition: color 0.15s ease; }
-.nav-links a:hover { color: var(--blue-900); }
+.nav-links a:hover { color: var(--orange-500); }
 
 /* Mobile: hamburger sits beside the brand on row one; the CTA button
    gets its own full-width row below, instead of squeezing in beside
@@ -245,7 +251,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 0.4rem;
   order: 2;
 }
-.nav-toggle svg { width: 26px; height: 26px; color: var(--blue-900); }
+.nav-toggle svg { width: 26px; height: 26px; color: var(--white); }
 
 .nav-cta {
   order: 4;
@@ -263,7 +269,7 @@ button { font-family: inherit; cursor: pointer; }
   width: min(82%, 340px);
   display: flex;
   flex-direction: column;
-  background: var(--blue-950);
+  background: var(--surface-elevated);
   padding: 5.5rem var(--space-3) var(--space-3);
   transform: translateX(100%);
   visibility: hidden;
@@ -356,7 +362,7 @@ body:has(.mobile-menu.is-open)::before {
    ========================================================================== */
 .hero {
   padding: var(--space-5) 0 var(--space-6);
-  background: linear-gradient(180deg, var(--white) 0%, var(--surface) 100%);
+  background: linear-gradient(180deg, var(--blue-950) 0%, var(--surface) 100%);
   overflow: hidden;
 }
 /* Consistent, tighter spacing below the hero on inner pages (About, Academy,
@@ -405,13 +411,15 @@ body:has(.mobile-menu.is-open)::before {
 }
 .hero-tags span::before { content: "— "; color: var(--orange-500); }
 
-/* Live ops panel (signature element) */
+/* Live ops panel (signature element) — elevated above the hero background
+   so it still reads as a distinct card now that the page itself is dark */
 .ops-panel {
-  background: var(--blue-950);
+  background: var(--surface-elevated);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-lg);
   padding: var(--space-3);
   color: var(--text-on-dark);
-  box-shadow: 0 30px 60px -25px rgba(10,35,66,0.45);
+  box-shadow: 0 30px 60px -25px rgba(0,0,0,0.55);
   font-family: var(--font-mono);
 }
 .ops-panel-head {
@@ -537,13 +545,17 @@ body:has(.mobile-menu.is-open)::before {
 }
 
 .card {
-  background: var(--white);
+  background: var(--surface-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: var(--space-3);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
 }
-.card:hover { box-shadow: 0 16px 30px -20px rgba(10,35,66,0.25); transform: translateY(-2px); }
+.card:hover {
+  box-shadow: 0 16px 30px -20px rgba(0,0,0,0.5);
+  border-color: rgba(255,255,255,0.24);
+  transform: translateY(-2px);
+}
 .card .icon {
   width: 40px; height: 40px;
   display: flex; align-items: center; justify-content: center;
@@ -631,7 +643,7 @@ body:has(.mobile-menu.is-open)::before {
 .price-card {
   display: flex;
   flex-direction: column;
-  background: var(--white);
+  background: var(--surface-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
@@ -677,7 +689,7 @@ body:has(.mobile-menu.is-open)::before {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.02rem;
-  color: var(--blue-900);
+  color: var(--white);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -688,7 +700,7 @@ body:has(.mobile-menu.is-open)::before {
 .faq-item summary::after {
   content: "+";
   font-size: 1.4rem;
-  color: var(--orange-600);
+  color: var(--orange-500);
   flex-shrink: 0;
   margin-left: var(--space-2);
 }
@@ -725,7 +737,7 @@ body:has(.mobile-menu.is-open)::before {
   color: var(--text-body);
   transition: border-color 0.15s ease;
 }
-.solution-chip:hover { border-color: var(--blue-900); color: var(--blue-900); }
+.solution-chip:hover { border-color: var(--orange-500); color: var(--orange-500); }
 
 /* ==========================================================================
    Final CTA

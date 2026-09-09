@@ -94,7 +94,7 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--blue-600);
   font-weight: 600;
   display: inline-block;
-  margin-bottom: var(--space-1);
+  margin-bottom: 0.3rem;
 }
 /* Exception: inside the dark-navy Financial Sentinel section, a navy-blue
    eyebrow label would be unreadable against the navy background, so it
@@ -377,7 +377,7 @@ body:has(.mobile-menu.is-open)::before {
 .hero-copy h1 {
   font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 700;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 .hero-copy h1 em {
   font-style: normal;

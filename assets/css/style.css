@@ -112,7 +112,13 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .section {
-  padding: var(--space-6) 0;
+  /* --space-5, not --space-6: two adjacent sections each contribute their
+     own top/bottom padding, so the visible gap is double this value. At
+     --space-6 that stacked up to ~190px of unbroken color between sections
+     with no background change (e.g. Sentinel -> Security), reading as dead
+     space rather than an intentional break. --space-5 keeps a clear section
+     boundary without it, and matches .solutions-strip's existing padding. */
+  padding: var(--space-5) 0;
 }
 .section--alt { background: var(--surface); }
 .section--dark {

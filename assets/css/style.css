@@ -837,3 +837,27 @@ body:has(.mobile-menu.is-open)::before {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* ==========================================================================
+   Company homepage (index.html) — neutral intro + equal-weight product cards.
+   Both product cards share identical styling so neither product dominates.
+   ========================================================================== */
+.company-hero .section-head { max-width: 760px; margin-bottom: 0; }
+.company-hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; margin-bottom: var(--space-3); }
+.company-hero .hero-ctas { justify-content: center; margin: var(--space-3) 0 0; }
+.product-grid { max-width: 980px; margin: 0 auto; }
+.product-card { display: flex; flex-direction: column; padding: var(--space-4) var(--space-3); }
+.product-card .product-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-1);
+}
+.product-card h3 { font-size: 1.5rem; margin-bottom: var(--space-2); }
+.product-card p { font-size: 0.98rem; margin-bottom: var(--space-3); }
+.product-points { margin-bottom: var(--space-3); flex-grow: 1; }
+.product-points li { position: relative; padding-left: 1.2rem; margin-bottom: 0.45rem; font-size: 0.92rem; color: var(--text-on-dark); }
+.product-points li::before { content: "—"; position: absolute; left: 0; color: var(--text-muted); }
+.product-card .btn { align-self: flex-start; }

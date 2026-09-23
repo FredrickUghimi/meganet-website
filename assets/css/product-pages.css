@@ -19,7 +19,7 @@
   --orange-pale:rgba(255,142,28,0.12);
   --cream:#F4EFE4;      /* primary text on navy */
   --text-muted:#9FAAB8; /* secondary text on navy */
-  --text-faint:#6E7A8A;
+  --text-faint:#8793A3; /* ≥4.5:1 (AA) on navy-900 sidebar and navy-950 footer */
   --border:rgba(244,239,228,0.12);
   --border-strong:rgba(244,239,228,0.2);
   --radius-sm:8px;

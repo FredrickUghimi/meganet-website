@@ -584,7 +584,7 @@ body:has(.mobile-menu.is-open)::before {
 .module-card .idx {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--orange-600);
+  color: var(--orange-500); /* orange-600 was 4.47:1 on --surface-elevated; 500 clears AA (5.8:1) */
   display: block;
   margin-bottom: 0.4rem;
 }

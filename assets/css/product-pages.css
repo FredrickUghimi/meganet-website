@@ -1,7 +1,8 @@
 /* ==========================================================================
    Mega-Net Software — Product Page System (EHR Cloud / ERP Cloud, etc.)
    A distinct visual language for deep-dive product pages: dark navy +
-   gold, Cormorant Garamond display / DM Sans body, sidebar navigation.
+   the Mega-Net brand orange (same accent as style.css / the logo),
+   Cormorant Garamond display / DM Sans body, sidebar navigation.
    This is intentionally separate from assets/css/style.css (the main
    marketing site's navy/orange system) — it does not touch or depend on
    that file, so the rest of the site is unaffected.
@@ -13,9 +14,9 @@
   --navy-950:#0D1B2A;   /* page background */
   --navy-900:#13253A;   /* sidebar / elevated panels */
   --navy-850:#1A3049;   /* nested elevation, hover states */
-  --gold-500:#C9A844;   /* primary accent */
-  --gold-600:#AD8F39;   /* hover/deeper gold */
-  --gold-pale:rgba(201,168,68,0.12);
+  --orange-500:#FF8E1C; /* primary accent — brand orange, matches style.css */
+  --orange-600:#E67812; /* deeper orange */
+  --orange-pale:rgba(255,142,28,0.12);
   --cream:#F4EFE4;      /* primary text on navy */
   --text-muted:#9FAAB8; /* secondary text on navy */
   --text-faint:#6E7A8A;
@@ -51,7 +52,7 @@
 }
 .pp a{color:inherit; text-decoration:none;}
 .pp img{max-width:100%; display:block;}
-.pp :focus-visible{outline:2px solid var(--gold-500); outline-offset:3px;}
+.pp :focus-visible{outline:2px solid var(--orange-500); outline-offset:3px;}
 
 /* ---------- Shell: sidebar + content ---------- */
 .pp-shell{
@@ -82,7 +83,7 @@
 .pp-brand img{height:34px; width:auto;}
 .pp-brand-text{display:flex; flex-direction:column; line-height:1.2;}
 .pp-brand-text strong{font-family:var(--font-display); font-size:1.05rem; color:#fff; font-weight:700;}
-.pp-brand-text span{font-size:0.68rem; letter-spacing:0.06em; color:var(--gold-500); text-transform:uppercase;}
+.pp-brand-text span{font-size:0.68rem; letter-spacing:0.06em; color:var(--orange-500); text-transform:uppercase;}
 
 .pp-nav-group h4{
   font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase;
@@ -94,9 +95,9 @@
   font-size:0.9rem; color:var(--text-muted); transition:background .15s ease, color .15s ease;
 }
 .pp-nav-group a:hover{background:var(--navy-850); color:var(--cream);}
-.pp-nav-group a.is-active{background:var(--gold-pale); color:var(--gold-500); font-weight:600;}
+.pp-nav-group a.is-active{background:var(--orange-pale); color:var(--orange-500); font-weight:600;}
 .pp-nav-group a.is-current{color:#fff; font-weight:600;}
-.pp-nav-group a.is-current::after{content:" —"; color:var(--gold-500);}
+.pp-nav-group a.is-current::after{content:" —"; color:var(--orange-500);}
 
 .pp-sidebar-cta{
   margin-top:auto;
@@ -151,9 +152,9 @@
 .pp-eyebrow{
   display:inline-flex; align-items:center; gap:8px;
   font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase;
-  color:var(--gold-500); font-weight:600; margin-bottom:0.9rem;
+  color:var(--orange-500); font-weight:600; margin-bottom:0.9rem;
 }
-.pp-eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold-500);}
+.pp-eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--orange-500);}
 
 .pp-section h2{font-size:clamp(1.6rem,3.2vw,2.2rem);}
 .pp-lede{color:var(--text-muted); font-size:1.08rem; max-width:62ch; margin:0 0 0.5em;}
@@ -166,7 +167,7 @@
   font-size:0.92rem; color:var(--text-muted);
 }
 .pp-hero-points span{display:flex; align-items:center; gap:8px;}
-.pp-hero-points svg{color:var(--gold-500); flex-shrink:0;}
+.pp-hero-points svg{color:var(--orange-500); flex-shrink:0;}
 .pp-ctas{display:flex; gap:12px; flex-wrap:wrap;}
 
 .pp-btn{
@@ -175,10 +176,11 @@
   transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
   font-family:var(--font-body);
 }
-.pp-btn-primary{background:var(--gold-500); color:var(--navy-950);}
-.pp-btn-primary:hover{background:#DAB94F; transform:translateY(-2px); box-shadow:0 12px 26px -8px rgba(201,168,68,0.45);}
+/* .pp prefix: out-ranks the generic ".pp a{color:inherit}" so the navy label actually applies */
+.pp .pp-btn-primary{background:var(--orange-500); color:var(--navy-950);}
+.pp-btn-primary:hover{background:#FF9F3D; transform:translateY(-2px); box-shadow:0 12px 26px -8px rgba(255,142,28,0.45);}
 .pp-btn-ghost{border:1.5px solid var(--border-strong); color:var(--cream);}
-.pp-btn-ghost:hover{border-color:var(--gold-500); color:var(--gold-500); transform:translateY(-2px);}
+.pp-btn-ghost:hover{border-color:var(--orange-500); color:var(--orange-500); transform:translateY(-2px);}
 .pp-btn-block{width:100%; justify-content:center;}
 
 /* ---------- Cards / feature groups ---------- */
@@ -191,7 +193,7 @@
   padding:1.5rem;
 }
 .pp-card .pp-icon{
-  width:40px; height:40px; border-radius:10px; background:var(--gold-pale); color:var(--gold-500);
+  width:40px; height:40px; border-radius:10px; background:var(--orange-pale); color:var(--orange-500);
   display:flex; align-items:center; justify-content:center; margin-bottom:1rem;
 }
 .pp-card h3{font-size:1.15rem; margin-bottom:0.4rem; color:#fff;}
@@ -201,7 +203,7 @@
 .pp-feature-group:last-child{margin-bottom:0;}
 .pp-feature-group h3{
   font-family:var(--font-body); font-size:0.78rem; letter-spacing:0.07em; text-transform:uppercase;
-  color:var(--gold-500); font-weight:700; margin-bottom:0.9rem;
+  color:var(--orange-500); font-weight:700; margin-bottom:0.9rem;
 }
 .pp-feature-group ul{list-style:none; margin:0; padding:0;}
 .pp-feature-group li{
@@ -209,7 +211,7 @@
   border-top:1px solid var(--border); font-size:0.96rem; color:var(--cream);
 }
 .pp-feature-group li:first-child{border-top:none;}
-.pp-feature-group li svg{flex-shrink:0; margin-top:4px; color:var(--gold-500);}
+.pp-feature-group li svg{flex-shrink:0; margin-top:4px; color:var(--orange-500);}
 .pp-feature-group li strong{color:#fff;}
 .pp-feature-group li span.detail{display:block; color:var(--text-muted); font-size:0.88rem; margin-top:2px;}
 
@@ -220,7 +222,7 @@
   background:var(--navy-900); border:1px solid var(--border); border-radius:999px;
   padding:8px 14px; font-size:0.87rem; color:var(--cream);
 }
-.pp-role-badge svg{color:var(--gold-500);}
+.pp-role-badge svg{color:var(--orange-500);}
 
 /* ---------- Callout / differentiator panel ---------- */
 .pp-callout{
@@ -230,7 +232,7 @@
 }
 .pp-callout p{color:var(--text-muted); font-size:1rem;}
 .pp-callout p:last-child{margin-bottom:0;}
-.pp-callout strong{color:var(--gold-500); font-weight:600;}
+.pp-callout strong{color:var(--orange-500); font-weight:600;}
 
 /* ---------- Final CTA ---------- */
 .pp-final-cta{
@@ -244,7 +246,7 @@
 
 /* ---------- Note / placeholder callouts ---------- */
 .pp-note{
-  border-left:3px solid var(--gold-500); background:var(--gold-pale);
+  border-left:3px solid var(--orange-500); background:var(--orange-pale);
   border-radius:0 var(--radius-sm) var(--radius-sm) 0;
   padding:0.85rem 1.1rem; font-size:0.87rem; color:var(--text-muted); margin-top:1.25rem;
 }
@@ -256,5 +258,5 @@
   font-size:0.85rem; color:var(--text-faint);
 }
 .pp-footer a{color:var(--text-muted);}
-.pp-footer a:hover{color:var(--gold-500);}
+.pp-footer a:hover{color:var(--orange-500);}
 .pp-footer-links{display:flex; flex-wrap:wrap; gap:1.25rem; margin-bottom:1rem;}

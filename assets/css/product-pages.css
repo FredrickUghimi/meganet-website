@@ -198,6 +198,21 @@
 }
 .pp-card h3{font-size:1.15rem; margin-bottom:0.4rem; color:#fff;}
 .pp-card p{font-size:0.93rem; color:var(--text-muted); margin:0;}
+.pp-card-wide{grid-column:1/-1;}
+
+/* Grouped report list inside a full-width card (ERP Cloud "All 16 reports").
+   Two balanced columns on wider screens, one on phones. */
+.pp-report-groups{margin-top:0.6rem;}
+@media (min-width:760px){ .pp-report-groups{column-count:2; column-gap:2.25rem;} }
+.pp-report-group{break-inside:avoid; padding-top:0.9rem;}
+.pp-report-group h4{
+  font-family:var(--font-body); font-size:0.74rem; letter-spacing:0.07em; text-transform:uppercase;
+  color:var(--orange-500); font-weight:700; margin:0 0 0.35rem;
+}
+.pp-report-group ul{list-style:none; margin:0; padding:0;}
+.pp-report-group li{padding:0.45rem 0; border-top:1px solid var(--border); font-size:0.9rem; color:var(--text-muted); line-height:1.5;}
+.pp-report-group li:first-child{border-top:none;}
+.pp-report-group li strong{display:block; color:#fff; font-weight:600;}
 
 .pp-feature-group{margin-bottom:2.25rem;}
 .pp-feature-group:last-child{margin-bottom:0;}

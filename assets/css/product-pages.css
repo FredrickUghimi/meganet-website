@@ -275,3 +275,53 @@
 .pp-footer a{color:var(--text-muted);}
 .pp-footer a:hover{color:var(--orange-500);}
 .pp-footer-links{display:flex; flex-wrap:wrap; gap:1.25rem; margin-bottom:1rem;}
+
+/* ---------- ERP Cloud page: hero width, feature blocks, screenshots, lightbox ---------- */
+.pp-hero h1{max-width:20ch;}
+.pp-contact-line{margin:1.5rem auto 0 !important; font-size:0.95rem;}
+.pp-contact-line a{color:var(--orange-500); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere;}
+
+.pp-feature{padding:2.5rem 0; border-top:1px solid var(--border);}
+.pp-feature:first-of-type{margin-top:1.5rem;}
+.pp-feature-label{
+  display:block; font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--orange-500); font-weight:700; margin-bottom:0.5rem;
+}
+.pp-feature h3{font-size:clamp(1.4rem,3vw,1.8rem); margin-bottom:0.6rem;}
+.pp-feature p{color:var(--text-muted); font-size:1rem; max-width:62ch; margin:0 0 0.6em;}
+
+.pp-shot{margin:1.5rem 0 0;}
+.pp-shot-link{
+  display:block; border:1px solid var(--border-strong); border-radius:var(--radius-md);
+  overflow:hidden; background:#fff; cursor:zoom-in;
+  box-shadow:0 18px 40px -22px rgba(0,0,0,0.7);
+}
+.pp-shot-link:hover{border-color:var(--orange-500);}
+.pp-shot-link img{width:100%; height:auto;}
+.pp-shot figcaption{margin-top:0.55rem; font-size:0.78rem; color:var(--text-faint);}
+
+.pp-lightbox{
+  border:none; padding:0; background:transparent; color:var(--cream);
+  width:100vw; max-width:100vw; height:100vh; max-height:100vh;
+}
+.pp-lightbox::backdrop{background:rgba(5,12,20,0.88);}
+.pp-lightbox[open]{display:block;}
+.pp-lightbox-scroll{
+  width:100%; height:100%; overflow:auto; padding:3.25rem 1rem 1.5rem;
+  display:flex; align-items:flex-start; justify-content:center; -webkit-overflow-scrolling:touch;
+}
+.pp-lightbox-scroll img{
+  width:min(1200px,100%); height:auto; max-width:none; background:#fff;
+  border-radius:var(--radius-sm); flex:0 0 auto;
+}
+@media (max-width:640px){
+  /* On phones show the screen larger than the viewport so its text is readable; swipe to pan. */
+  .pp-lightbox-scroll{justify-content:flex-start;}
+  .pp-lightbox-scroll img{width:900px;}
+}
+.pp-lightbox-close{
+  position:fixed; top:10px; right:14px; z-index:2; width:44px; height:44px; border-radius:50%;
+  border:1px solid var(--border-strong); background:var(--navy-900); color:var(--cream);
+  font-size:1.6rem; line-height:1; cursor:pointer;
+}
+.pp-lightbox-close:hover{border-color:var(--orange-500); color:var(--orange-500);}

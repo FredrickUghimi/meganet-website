@@ -14,7 +14,6 @@
    bg), so it's a separate, lighter step on the same navy ladder.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
 :root {
   /* Brand — sampled directly from the Mega-Net logo */
@@ -36,9 +35,9 @@
   --text-on-dark: #C9D6E4;
 
   /* Type */
-  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-display: 'Inter', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+  --font-mono: ui-monospace, 'Consolas', monospace;
 
   /* Layout */
   --max-width: 1180px;

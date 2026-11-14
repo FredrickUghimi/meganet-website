@@ -8,7 +8,6 @@
    that file, so the rest of the site is unaffected.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root{
   --navy-950:#0D1B2A;   /* page background */
@@ -27,8 +26,8 @@
   --radius-lg:22px;
   --sidebar-w:288px;
 
-  --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --font-body:'DM Sans', 'Segoe UI', sans-serif;
+  --font-display:'Inter', 'Segoe UI', sans-serif;
+  --font-body:'Inter', 'Segoe UI', sans-serif;
 }
 
 .pp *{box-sizing:border-box;}
